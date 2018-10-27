@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shu Restrant</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "myFont";
+            src: url("myFont.ttf");
+        }
+        .nav-item::after {
+            content:'';
+            display:block;
+            width:0px;
+            height:2px;
+            background:#fec400;
+            transition: 0.2s;
+        }
+        .nav-item:hover::after {
+            width:100%;
+        }
+        #home-img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            top: -120px;
+        }
+        .intro {
+            background-color: #35383C;
+            margin-right: 0px;
+            padding: 10%;
+        }
+        p {
+            color: #A8A8A8;
+            line-height: 30px;
+            font-size: 11pt;
+            font-family: verdana;
+        }
+        #restaurant-img {
+            width: 150%;
+        }
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        h2, h5 {
+            color: white; padding-bottom: 4px;
+            font-family: 'Unica One', cursive;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand navbar-dark" style="background-color: black; z-index: 1">
+        <a href="/" class="navbar-brand">Home</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <a href="menu" class="nav-item active nav-link">Menu</a>
+                <a href="reservation" class="nav-item active nav-link">Reservation</a>
+            </ul>
+
+            <form action="#" method="post" class="form-inline my-2 mylg-0">
+                <input type="search" name="search" class="form-control mr-sm-2" placeholder="Find Our Restaurant" style="background: black">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Home Pic -->
+    <img src="https://images.pexels.com/photos/372882/pexels-photo-372882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" id="home-img" alt="food3">
+
+    <!-- intro -->
+    <div id="container-fluid" style="margin-top: -120px">
+        <div class="row">
+            <div class="col-lg-8 intro">
+                <h2>WELCOME TO SHU RESTAURANT!</h2>
+                <h5 style="color: #9F855F">CLASSIC STEAKHOUSE WITH A MODERN VIBE</h5>
+                <hr style="border-color: #9F855F; height: 3px">
+                <p>
+                    Inspired by Japanese cuisine and French technique, Chef's Table at Brooklyn Fare's
+                    menu preserves the integrity of its ingredients. The duration of the tasting
+                    menu is two and a half hours, and is focused on seafood and shellfish. The
+                    price of our tasting menu is $394.36 per person, plus tax. Beverage is additional and not included in the cost of the menu.
+                </p>
+                <p>
+                    Inspired by Japanese cuisine and French technique, Chef's Table at Brooklyn Fare's
+                    menu preserves the integrity of its ingredients. The duration of the tasting
+                    menu is two and a half hours, and is focused on seafood and shellfish. The
+                    price of our tasting menu is $394.36 per person, plus tax. Beverage is additional and not included in the cost of the menu.
+                </p>
+                <p>
+                    Inspired by Japanese cuisine and French technique, Chef's Table at Brooklyn Fare's
+                    menu preserves the integrity of its ingredients. The duration of the tasting
+                    menu is two and a half hours, and is focused on seafood and shellfish. The
+                    price of our tasting menu is $394.36 per person, plus tax. Beverage is additional and not included in the cost of the menu.
+                </p>
+
+            </div>
+            <div class="col-lg-4" style="margin-left: -15px">
+                <img src="https://metaphorcontrol.com/chopbeta/wp-content/uploads/2015/02/111ChopHouse-Interior.jpg" alt="restaurant" id="restaurant-img">
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

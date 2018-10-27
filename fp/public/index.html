@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TODO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- jquery -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!-- bootstrap v3 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- font -->
+
+    <style>
+        body {
+            overflow-y: hidden;
+            background-color: pink;
+        }
+        
+        .mainbox {
+            margin-top: 10%;
+            margin-left: 30%;
+            width: 40%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Login box-->
+        <div id="loginbox" class="mainbox">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <p class="panel-title">Sign In</p>
+                </div>
+
+                <div style="padding-top:30px" class="panel-body">
+
+                    <form id="loginform" class="form-horizontal">
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="loginUsername" type="text" class="form-control" name="username" placeholder="username or email"
+                                required>
+                        </div>
+
+                        <div style="margin-bottom: 15px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="loginPassword" type="password" class="form-control" name="password" placeholder="password"
+                                required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12" id="alertMsg2"></div>
+                        <div style="margin-top:10px" class="form-group">
+                            <div class="col-lg-12 control">
+                                <input id="btn-login" class="btn btn-success" type="button" value="Login">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12 control">
+                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                    Don't have an account?
+                                    <a href="#" id="signup">
+                                        Sign Up Here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End of login box-->
+
+        <!-- Signup Box -->
+        <div id="signupbox" style="display:none;" class="mainbox">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">Sign Up</div>
+                </div>
+
+                <div class="panel-body">
+                    <form id="signupform" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input id="signupUserName" type="text" class="form-control" name="email" placeholder="Email Address"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-lg-3 control-label">First Name</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" name="firstname" placeholder="First Name"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname" class="col-lg-3 control-label">Last Name</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-lg-3 control-label">Password</label>
+                            <div class="col-lg-9">
+                                <input id="signupPassword" type="password" class="form-control" name="password"
+                                    placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12" id="alertMsg"></div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input id="btn-signup" type="button" class="btn btn-info" value="Sign Up">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <div style="border-top: 1px solid #888;padding-top: 15px; font-size: 85%">
+                                    Already have an account?
+                                    <a id="signinlink">
+                                        Log in Here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End of signup Box-->
+
+    </div>
+</body>
+
+<script>
+    $('#signup').on(
+        'click',
+        function (evt) {
+            $('#loginbox').hide();
+            $('#signupbox').show();
+        })
+
+    $('#signinlink').on(
+        'click',
+        function (evt) {
+            $('#signupbox').hide();
+            $('#loginbox').show();
+        }
+    )
+
+    document.getElementById('btn-signup').onclick = function signup() {
+        let userName = document.getElementById("signupUserName").value;
+        let password = document.getElementById("signupPassword").value;
+        if (userName === '' || password === '') {
+            if (userName === '') {
+                document.getElementById("alertMsg").innerText = "User Name Can't Be Empty!";
+            } else {
+                document.getElementById("alertMsg").innerText = "Password Can't Be Empty"
+            }
+            return false;
+        }
+
+        let data = {};
+        data['username'] = userName;
+        data['password'] = password;
+
+        let sendData = JSON.stringify(data);
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = handle_res;
+        xhr.open("post", "/signup");
+        xhr.send(sendData);
+
+        function handle_res() {
+            if (this.readyState === 4 && this.status === 200) {
+                if (this.responseText === "User Already Exists!") {
+                    document.getElementById("alertMsg").innerText = this.responseText;
+                } else {
+                    window.location.href = '/';
+                }
+            }
+        }
+    }
+
+    document.getElementById('btn-login').onclick = function login() {
+        let userName = document.getElementById("loginUsername").value;
+        let password = document.getElementById("loginPassword").value;
+        if (userName === '' || password === '') {
+            if (userName === '') {
+                document.getElementById("alertMsg2").innerText = "User Name Can't Be Empty!";
+            } else {
+                document.getElementById("alertMsg2").innerText = "Password Can't Be Empty"
+            }
+            return false;
+        }
+
+        let data = {};
+        data['username'] = userName;
+        data['password'] = password;
+
+        let sendData = JSON.stringify(data);
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = handle_res;
+        xhr.open("post", "/login");
+        xhr.send(sendData);
+
+        function handle_res() {
+            if (this.readyState === 4 && this.status === 200) {
+                if (this.responseText === "Incorrect Username or Password!") {
+                    document.getElementById("alertMsg2").innerText = this.responseText;
+                } else {
+                    window.location.href = '/';
+                }
+            }
+        }
+    }
+
+</script>
+
+</html>

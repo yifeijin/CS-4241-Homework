@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chinese Foodie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script >
+    <link rel="mystylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/scripts.js"></script>
+    <style>
+
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #table {
+        text-align: center;
+    }
+
+    .mid {
+        text-align: center;
+    }
+    th {
+        text-align: center;
+        color: #3A3B3A;
+    }
+    .tbl-content{
+      height:300px;
+      overflow-x:auto;
+      margin-top: 0px;
+    }
+
+    .grey {
+        background-color:#3A3B3A;
+        color: white;
+    }
+
+    .email:visited {
+		color: #666633;
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="carousel-top" class="carousel slide" data-ride="carousel">
+
+        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-id" data-slide-to="1"></li>
+                <li data-target="#carousel-id" data-slide-to="2"></li>
+                <li data-target="#carousel-id" data-slide-to="3"></li>
+                <li data-target="#carousel-id" data-slide-to="4"></li>
+                <li data-target="#carousel-id" data-slide-to="5"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner" width="200" height="100">
+                <div class="carousel-item active">
+                    <img style="height:730px" src="https://image.ibb.co/cAB9Hz/chuan.jpg" alt="chuan">
+                    <div class="carousel-caption">
+                        <h3>Spicy Boiled BBQ</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="height:730px" src="https://image.ibb.co/fWb9Hz/duck.jpg" alt="Duck">
+                    <div class="carousel-caption">
+                        <h3>Peking Duck</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="height:730px" src="https://image.ibb.co/cGNS4e/dimsum.jpg" alt="dimsum">
+                    <div class="carousel-caption">
+                        <h3>Dim Sum</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="height:730px" src="https://image.ibb.co/hDeAup/dumplings.jpg" alt="dumplings">
+                    <div class="carousel-caption">
+                        <h3>Dumpling</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="height:730px" src="https://image.ibb.co/cRyWxz/mushroom.jpg" alt="mushroom">
+                    <div class="carousel-caption">
+                        <h3>Mushroom Pot</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="height:730px" src="https://image.ibb.co/cx4zn9/riceDump.jpg" alt="riceDump">
+                    <div class="carousel-caption">
+                        <h3>Rice Dumpling</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#carousel-id" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-id" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+    </div>
+
+    <hr>
+    <h2 class="mid">Learn More About Chinese Food -- Scroll for more!</h2>
+    
+    <div id="table" class="mid"></div>
+</div>
+
+<div id="container">
+
+    <ul class="nav nav-pills" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active in" data-toggle="pill" href="#Add">Add</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#Delete">Delete</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#Edit">Edit</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="Add" class="container tab-pane active in"><br>
+            <p>Add a food you like. If you want to add a food with same name, you can edit it in 'Edit' tab.</p>
+
+            <form action="/add" method="POST">
+                <div class="form-group">
+                    <div class="form-group">
+                        <p> Food Name:</p>
+                        <input type="text" class="form-control" placeholder="(ex: hotpot)" name="name">
+                    </div>
+                    <div class="form-group">
+                        <p>Original City:</p>
+                        <input type="text" class="form-control" placeholder="(ex: Beijing)" name="city">
+                    </div>
+                    <div class="form-group">
+                        <p>Spiciness:</p>
+                        <input type="text" class="form-control" placeholder="(0-5)" name="spiciness">
+                    </div>
+                    <div class="form-group">
+                        <p>Price:</p>
+                        <input type="text" class="form-control" placeholder="(1-100)" name="price">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" >
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="Delete" class="container tab-pane fade"><br>
+            <form action="/delete" method="POST">
+                <div class="form-group">
+                    <p> Enter food name that is exactly the same as above shows:</p>
+                    <input type="text" size="30" class="form-control" name="name" placeholder="food name (ex: hotpot)">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Delete" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+
+        <div id="Edit" class="container tab-pane fade"><br>
+            <form action="/edit" method="POST">
+                <div class="form-group">
+                    <p class="text-left">Original Name:</p>
+                    <input type="text" class="form-control" placeholder="Enter Original Name" name="ON" />
+                </div>
+                <div class="form-group">
+                    <p class="text-left">New Name:</p>
+                    <input type="text" class="form-control" placeholder="Enter New Name" name="name" />
+                </div>
+                <div class="form-group">
+                    <p class="text-left">New City:</p>
+                    <input type="text" class="form-control" placeholder="Enter New City" name="city" />
+                </div>
+                <div class="form-group">
+                    <p class="text-left">New Spiciness:</p>
+                    <input type="text" class="form-control" placeholder="Enter New Spiciness" name="spiciness" />
+                </div>
+                <div class="form-group">
+                    <label>New Price:</label>
+                    <input type="text" class="form-control" placeholder="Enter New Price" name="price" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small grey pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="text-uppercase">Team Foodie</h5>
+                    <p>This is for project2 Short Stack</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            Yifei Jin: <a class="email" href="mailto:yjin2@wpi.edu">yjin2@wpi.edu</a>
+                        </li>
+                        <li>
+                            Yaofeng Wang: <a class="email" href="mailto:ywang15@wpi.edu">ywang15@wpi.edu</a>
+                        </li>
+                        <li>
+                            <a class="email" href="https://github.com/Feng729/a2-shortstack"><i style="font-size:24px" class="fa">&#xf09b;</i>a2-shortstack</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+    xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = handle_res
+    xhr.open("GET", "/data")
+    xhr.send()
+
+    function handle_res() {
+        if (this.readyState === 4 && this.status === 200) {
+            var foods = JSON.parse(this.responseText)
+            var keys = []
+            var table_html = ""
+
+            table_html += ("<div>")
+            table_html += ("<table class=\"table\"><tr>")
+            table_html += '<th>' + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspName" + '</th>' + '<th>' + "Original City" + '</th>' + '<th>' + "Spiciness" + '</th>' + '<th>' + "NormalPrice" + '</th>' + '<th>' + "Range&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + '</th>';
+            table_html += ("</tr>");
+            table_html += ("</table>")
+            table_html += ("</div>")
+            table_html += ("<div class=\"tbl-content\">")
+            table_html += ("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"table\"><tr>")
+            foods.food.forEach(function (d) {
+                table_html += '<tr>';
+                table_html += ('<td>' + d.foodName + '</td>' + '<td>' + d.OriginalCity + '</td>' + '<td>' + d.spiciness + '</td>' + '<td>' + d.NormalPrice + '</td>' + '<td>' + d.range + '</td>');
+            })
+
+            document.getElementById("table").innerHTML = table_html
+        }
+    }
+
+
+    $(function () {
+    	$('.active').on('click', function () {
+            $.ajax()
+	    })
+        
+    })
+</script>
+
+</html>

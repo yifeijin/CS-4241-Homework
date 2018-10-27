@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shu Restaurant</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+
+    .nav-item::after{
+        content:'';
+        display:block;
+        width:0px;
+        height:2px;
+        background:#fec400;
+        transition: 0.2s;
+    }
+    .nav-item:hover::after{
+        width:100%;
+    }
+    .slide {
+        text-align: center;
+    }
+    #selection1 {
+        background: green;
+    }
+    .dropbtn {
+        background-color: #857AFF;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color: #5F56B5;}
+    .mid {text-align: center;}
+
+    .column {
+        margin: auto;
+        margin-top: 200px;
+        margin-left: 8px
+        width: 33.33%;
+        height: 230px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .vl {
+        margin: auto;
+        margin-top: 80px;
+        border-left: 1px solid black;
+        height: 350px;
+        /*top: 00px;*/
+    }
+
+    .container1 {
+        display: table;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        /*width: 50%; */
+        /*background-color: white*/
+        background-color: black; 
+        /*height: 1000px*/
+    }
+
+    .helper {
+        margin: auto;
+        margin-top: 40px;
+        width: 1000px;
+        height: 550px; 
+        background-color: white;
+    }
+    .buttonSearch {
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .buttonSearch:hover {color: black;background-color: #EFC041;}
+    .buttonSubmit {
+        background-color: #f1f1f1;
+        color: black;
+        border: 1px solid black;
+    }
+
+    .buttonSubmit:hover {color:white;background-color: #EFC041; border: 2px #EFC041;}
+
+    .btnTime {
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .activeTime, .btnTime:hover {
+        background-color: #666;
+        color: white;
+    }
+
+    .btnTime[disabled]:hover {
+        color: #7E7E7E;
+        background-color: #f1f1f1;
+    }
+
+    #timeinput {
+        width: 0px;
+        height: 0px;
+        border: 0px;
+        visibility: false;
+    }
+
+</style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-dark" style="background-color: black; z-index: 1">
+        <a href="/" class="navbar-brand">Home</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <a href="menu" class="nav-item active nav-link">Menu</a>
+                <a href="reservation" class="nav-item active nav-link">Reservation</a>
+            </ul>
+
+            <form action="#" method="post" class="form-inline my-2 mylg-0">
+                <input type="search" name="search" class="form-control mr-sm-2" placeholder="Find Our Restaurant" style="background: black">
+                <button class="btn btn-outline-success">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <form action="add" method="POST" style="margin:auto; top:100px">
+        <div class="container1">
+            <div class="helper">
+                <div class="row">
+                    <div class="column" style="margin: auto">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01" style="width: 140px">Party Size</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="people">
+                                <option selected>Choose...</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01" style="width: 140px">Name</label>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01" style="width: 140px">Phone Number</label>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="phone">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01" style="width: 140px">Date</label>
+                            </div>
+                            <select class="custom-select" id="dateSelect" name="date">
+                                <option selected>Choose...</option>
+                                <option> <script> document.write(new Date().toDateString()); </script> </option>
+                                <option id="day2"> </option>
+                                <option id="day3"> </option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="vl"></div>
+                    <div class="column" style="margin: auto;">
+                        <div class="timediv">
+                            <p style="text-align: center; visibility: hidden;" id="demo"> Select an available time </p>
+                            <div style="display: inline">
+                                <div class="input-group-prepend" id="time_btns_1"></div>
+                            </div><br>
+                            <div style="display: inline">
+                                <div class="input-group-prepend" id="time_btns_2"></div>
+                            </div><br><br>
+                        </div>
+                        <div class="input-group-prepend">
+                            <input id="submitBtn" style="visibility: hidden" type="submit" value="Submit" class="btn btn-primary buttonSubmit">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> 
+    </form>
+
+
+    <script>
+        // get data from backend
+        xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = handle_res
+        xhr.open("GET", "/data")
+        xhr.send()
+
+        var dateArray = []
+
+        function handle_res() {
+            if (this.readyState === 4 && this.status === 200) {
+                var records = JSON.parse(this.responseText)
+                records.reserv.forEach(function (d) {
+                    var adate = new Date(d.date);
+                    dateArray.push(adate);
+                    // console.log(adate)
+                    console.log(adate.toDateString());
+                    console.log(adate.toTimeString().substr(0,5));
+                })
+                console.log(dateArray)
+            }
+        }
+
+
+
+        var min;
+
+        // show the date of recent three days
+        var d = new Date();
+        var tomorrowDate = d.getDate() + 1;
+        d.setDate(tomorrowDate);
+        document.getElementById("day2").innerHTML = d.toDateString(); 
+        var threeDate = d.getDate() + 1;
+        d.setDate(threeDate);
+        document.getElementById("day3").innerHTML = d.toDateString(); 
+
+        // event handler of date dropdown list
+        var dateSelect = document.getElementById('dateSelect');
+
+        dateSelect.onchange = function() {
+            var x = document.getElementById("dateSelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+            if(x == "Choose..."){
+                document.getElementById("submitBtn").style.visibility='hidden'
+                document.getElementById("demo").style.visibility='hidden'
+            }
+            else if (x != "Choose..."){
+                document.getElementById("submitBtn").style.visibility='visible'
+                document.getElementById("demo").style.visibility='visible'
+
+                showTime(x);
+            }
+
+        }
+
+        //show the available time slots
+        function showTime(date){
+            
+            var time_btns_html_1 = ""
+            var time_btns_html_2 = ""
+            time_btns_html_1 += ("<button id=\"500\" class=\"btnTime\" style=\" \" type=\"button\"> 5:00 PM </button>&nbsp")
+            time_btns_html_1 += ("<button id=\"530\" class=\"btnTime\" style=\" \" type=\"button\"> 5:30 PM </button>&nbsp")
+            time_btns_html_1 += ("<button id=\"600\" class=\"btnTime\" style=\" \" type=\"button\"> 6:00 PM </button>&nbsp")
+            time_btns_html_1 += ("<button id=\"630\" class=\"btnTime\" style=\" \" type=\"button\"> 6:30 PM </button>")
+            document.getElementById("time_btns_1").innerHTML = time_btns_html_1
+            time_btns_html_2 += ("<button id=\"700\" class=\"btnTime\" style=\" \" type=\"button\"> 7:00 PM </button>&nbsp")
+            time_btns_html_2 += ("<button id=\"730\" class=\"btnTime\" style=\" \" type=\"button\"> 7:30 PM </button>&nbsp")
+            time_btns_html_2 += ("<button id=\"800\" class=\"btnTime\" style=\" \" type=\"button\"> 8:00 PM </button>&nbsp")
+            time_btns_html_2 += ("<button id=\"830\" class=\"btnTime\" style=\" \" type=\"button\" checked='0'> 8:30 PM </button>")
+            time_btns_html_2 += "<input id='timeinput' name='time' type='text' value=''></input>"
+            document.getElementById("time_btns_2").innerHTML = time_btns_html_2
+
+            dateArray.forEach(function(d) {
+                if(date == d.toDateString()){
+                    console.log(date);
+                    console.log(d.toLocaleTimeString())
+                    var timeExist = d.toLocaleTimeString().substr(0,1).concat(d.toLocaleTimeString().substr(2,2));
+                    console.log(timeExist);
+                    var button = document.getElementById(timeExist)
+                    button.disabled = true;
+                }
+            })
+
+            var btnClick = 0;
+            var btns = document.getElementsByClassName("btnTime");
+            for (var i = 0; i < btns.length; i++) {
+                var reply_click = function(){
+                    var timeinput = document.getElementById('timeinput')
+                    document.getElementById('timeinput').value = this.id;
+                }
+                btns[i].onclick = reply_click;
+             }
+        }
+
+</script>
+</body>
+
+</html>

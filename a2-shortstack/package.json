@@ -1,0 +1,11 @@
+{
+  "name": "a3",
+  "version": "",
+  "description": "",
+  "author": "Yifei Jin",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

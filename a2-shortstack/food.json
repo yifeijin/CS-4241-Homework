@@ -1,0 +1,88 @@
+{
+    "food": [
+        {
+            "foodName": "Hotpot",
+            "OriginalCity": "Chongqing",
+            "spiciness": 5,
+            "NormalPrice": 45,
+            "range": "$$$"
+        },
+        {
+            "foodName": "Peking Duck",
+            "OriginalCity": "Beijing",
+            "spiciness": 0,
+            "NormalPrice": 80,
+            "range": "$$$$"
+        },
+        {
+            "foodName": "Spicy Boiled BBQ",
+            "OriginalCity": "Chengdu",
+            "spiciness": 4,
+            "NormalPrice": 15,
+            "range": "$$"
+        },
+        {
+            "foodName": "Beef Noodle",
+            "OriginalCity": "Lanzhou",
+            "spiciness": "2",
+            "NormalPrice": 8,
+            "range": "$"
+        },
+        {
+            "foodName": "Fried Rice",
+            "OriginalCity": "Yangzhou",
+            "spiciness": "0",
+            "NormalPrice": 6,
+            "range": "$"
+        },
+        {
+            "foodName": "Dim Sum",
+            "OriginalCity": "Guangzhou",
+            "spiciness": "1",
+            "NormalPrice": 35,
+            "range": "$$$"
+        },
+        {
+            "foodName": "beijing duck",
+            "OriginalCity": "beijing",
+            "spiciness": "1",
+            "NormalPrice": "111",
+            "range": "invalid price input!"
+        },
+        {
+            "foodName": "sdetyu",
+            "OriginalCity": "oiuytrse",
+            "spiciness": "invalid spiciness input!",
+            "NormalPrice": "dfesrgdt",
+            "range": "invalid price input!"
+        },
+        {
+            "foodName": "bbbbb",
+            "OriginalCity": "sssss",
+            "spiciness": "invalid spiciness input!",
+            "NormalPrice": "3",
+            "range": "$"
+        },
+        {
+            "foodName": "asdfg",
+            "OriginalCity": "hhh",
+            "spiciness": "3",
+            "NormalPrice": "hsgrfz",
+            "range": "invalid price input!"
+        },
+        {
+            "foodName": "Dongpo Pork",
+            "OriginalCity": "Hangzhou",
+            "spiciness": "0",
+            "NormalPrice": "15",
+            "range": "$$"
+        },
+        {
+            "foodName": "Sweet pork",
+            "OriginalCity": "Hangzhou",
+            "spiciness": "0",
+            "NormalPrice": "20",
+            "range": "$$"
+        }
+    ]
+}
